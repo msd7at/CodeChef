@@ -2,10 +2,19 @@ t=int(input())
 for i in range(t):
   n=int(input())
   l=list(map(int,input().split()))
-  s=sum(l)
-  ss=int(s/(n-1))
+  s=sum(l)               # s is the sum of given list 
+  
+  ss=int(s/(n-1))        # sum of all variable of our upcoming solution 
+                         # eg: if equations are a+b=9    b+c=6    a+c= 5
+                         # then  a+b+c =10  ------>                   ===!!>>EQUATION 1
+                         #                         a+b+b+c+a+c=9+6+5
+                         #                         2a+2b+2c=20 => a+b+c=10
   for j in l:
-    print(ss-j,end=" ")
+    print(ss-j,end=" ")  # let j = a+b = 9   ==>  9+c=10   from equation 1 (line 8) 
+                         #                        =c=1  print(c) which is ss-j  ss=10 and j 9
+    
+     
+    
  """   
 An equation is an equality containing one or more variables. Solving the equation consists of determining which values of the variables make the equality true. In this situation, variables are also known as unknowns and the values which satisfy the equality are known as solutions. An equation differs from an identity in that an equation is not necessarily true for all possible values of the variable.
 

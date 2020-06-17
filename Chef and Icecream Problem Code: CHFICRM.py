@@ -1,0 +1,30 @@
+#link:-https://www.codechef.com/JUNE20B/problems/CHFICRM
+t=int(input())
+for q in range(t):
+    n=int(input())
+    l=list(map(int,input().split()))
+    c=[0,0]
+    u=0
+    for i in l:
+        if i==5:
+            c[0]+=1
+        elif i==10:
+            if c[0]>0:
+                c[0]=c[0]-1
+                c[1]=c[1]+1
+            else:
+                print("NO")
+                u=90
+                break
+        else:
+            if c[1]>0:
+                c[1]=c[1]-1
+            elif c[0]>1:
+                c[0]=c[0]-2
+            else:
+                print("NO")
+                u=90
+                break
+    if u!=90:
+        print("YES")
+            
